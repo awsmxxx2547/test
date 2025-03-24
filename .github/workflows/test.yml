@@ -1,0 +1,15 @@
+name: Github
+run-name: ${{ github. actor }} is me
+on: [push]
+
+jobs:
+  Hello-World:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello world!"
+      - run: echo "Runner OS: ${{ runner.os }}."
+      - run: echo "Event-name: ${{ github.event_name }}."
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - run: echo "Status: ${{ job.status }}."
